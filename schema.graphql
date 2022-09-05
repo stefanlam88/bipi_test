@@ -1,0 +1,19 @@
+type Merchant {
+  id: Int!
+  merchant_name: String
+  phone_number: String
+  latitude: Float
+  longitude: Float
+  isActive: Boolean
+  recorded_datetime: timetz
+}
+
+type Query {
+  merchantList: Merchant
+}
+
+type Mutation {
+  addNewMerchant(merchant_name: String!, phone_number: String!, latitude: Float!, longitude: Float!): Merchant
+  updateMerchant(merchant_name: String!, phone_number: String!, latitude: Float!, longitude: Float!): Merchant
+  updateIsActiveMerchant(isActive: Boolean!): Merchant
+}
